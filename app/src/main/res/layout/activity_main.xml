@@ -5,161 +5,180 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adr"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-6932127119268721/5825895104"
-        />
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:gravity="center_vertical"
         tools:context=".MainActivity"
-        tools:ignore="SpUsage" >
+        tools:ignore="SpUsage">
 
         <Button
+            android:id="@+id/reset"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
-            android:background="@drawable/ic_auto_renew_black_24dp"
-            android:id="@+id/reset"/>
+            android:layout_gravity="end"
+            android:layout_margin="40dp"
+            android:background="@drawable/ic_auto_renew_black_24dp" />
+
         <LinearLayout
+            android:id="@+id/urt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/urt">
+            android:layout_marginTop="-100dp"
+            android:orientation="horizontal">
+
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/player_x"
-                android:focusable="false"
-                android:textSize="36dp"
                 android:autofillHints="@string/player_x"
+                android:focusable="false"
+                android:text="@string/player_x"
+                android:textSize="36dp"
                 tools:ignore="LabelFor,TextFields,UnusedAttribute" />
+
             <TextView
+                android:id="@+id/player1_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/player1_score"
-                android:textSize="24dp"
-                />
+                android:textSize="24dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
+
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/player_o"
-                android:focusable="false"
-                android:textSize="36dp"
                 android:autofillHints="@string/player_o"
+                android:focusable="false"
+                android:text="@string/player_o"
+                android:textSize="36dp"
                 tools:ignore="LabelFor,TextFields,UnusedAttribute" />
+
             <TextView
+                android:id="@+id/player2_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/player2_score"
-                android:textSize="24dp"/>
+                android:textSize="24dp" />
         </LinearLayout>
+
         <TextView
+            android:id="@+id/setter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/x"
             android:layout_gravity="center_horizontal"
-            android:textSize="48dp"
-            android:id="@+id/setter"/>
+            android:text="@string/x"
+            android:textSize="48dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
+
             <Button
+                android:id="@+id/bt0"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/black"
-                android:textSize="30dp"
                 android:textColor="@color/White"
-                android:id="@+id/bt0"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
+
             <Button
+                android:id="@+id/bt1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@drawable/custom_button3"
                 android:textColor="@color/black"
                 android:textSize="30dp"
-                android:id="@+id/bt1"
                 tools:ignore="ButtonStyle" />
+
             <Button
+                android:id="@+id/bt2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/black"
-                android:textSize="30dp"
                 android:textColor="@color/White"
-                android:id="@+id/bt2"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
+
             <Button
+                android:id="@+id/bt3"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@drawable/custom_button2"
-                android:textSize="30dp"
                 android:textColor="@color/black"
-                android:id="@+id/bt3"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
+
             <Button
+                android:id="@+id/bt4"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/black"
-                android:textSize="30dp"
                 android:textColor="@color/White"
-                android:id="@+id/bt4"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
+
             <Button
+                android:id="@+id/bt5"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@drawable/custom_button1"
-                android:textSize="30dp"
                 android:textColor="@color/black"
-                android:id="@+id/bt5"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
+
             <Button
+                android:id="@+id/bt6"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/black"
-                android:textSize="30dp"
                 android:textColor="@color/White"
-                android:id="@+id/bt6"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
+
             <Button
+                android:id="@+id/bt7"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@drawable/custom_button"
-                android:textSize="30dp"
                 android:textColor="@color/black"
-                android:id="@+id/bt7"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
+
             <Button
+                android:id="@+id/bt8"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/black"
-                android:textSize="30dp"
                 android:textColor="@color/White"
-                android:id="@+id/bt8"
+                android:textSize="30dp"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
 
