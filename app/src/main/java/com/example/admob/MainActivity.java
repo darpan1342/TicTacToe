@@ -2,18 +2,22 @@ package com.example.admob;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
     AdView madview;
     String win;
     String lose;
+    InterstitialAd interstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         madview= findViewById(R.id.adr);
         AdRequest adRequest = new AdRequest.Builder().build();
         madview.loadAd(adRequest);
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-6932127119268721/6478741031");
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        interstitialAd.loadAd(adRequest1);
+        interstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdClosed() {
+                interstitialAd.loadAd( new AdRequest.Builder().build());
+            }
+        });
         final Button re =  findViewById(R.id.reset);
         final TextView scorePlayer1= findViewById(R.id.player1_score) ;
         final TextView scorePlayer2=  findViewById(R.id.player2_score);
@@ -41,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(interstitialAd.isLoaded())
+                {
+                    interstitialAd.show();
+                }
+                else
+                {
+                    Log.i("ad","ad is not loaded");
+                }
                 bt0.setText("");
                 bt1.setText("");
                 bt2.setText("");
